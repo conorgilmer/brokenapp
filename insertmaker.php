@@ -28,12 +28,9 @@ $product['mf_id'] =0;
 
 if (!empty($_POST)) {
 	
-	
 	$product = array();
 	$product['mf_title'] = htmlspecialchars(strip_tags($_POST["mf_title"]));
 //	$product['mf_id'] = (int) htmlspecialchars(strip_tags($_POST["mf_id"]));
-        
-        
         $product['mf_id'] = isset($_POST["mf_id"]) ? (int) $_POST["mf_id"] : 0;
         
 	$flashMessage = "";
@@ -48,10 +45,8 @@ if (!empty($_POST)) {
                 } else {
                     
                     updateMaker($product);
-		
                         header("Location: listmakers.php");
-                }
-		
+                }		
 		
 	}
 	

@@ -29,15 +29,15 @@ if(mysql_select_db("movietutorial",$link_id)) {
 
 if ($link_id) {
     echo("Successful Connect to db server");
-    
+    //put inside if
     if(mysql_select_db(DB_DATABASE, $link_id)) {
 
         echo("DB Selected");
     } else {
-        die("<b>couldn't select db</b>");
+        echo("<b>couldn't select db</b>");
     }
     
 } else {
     
-    die ("<b>couldn't connect to db</b>");
+    echo ("<b>couldn't connect to db</b>");
 }

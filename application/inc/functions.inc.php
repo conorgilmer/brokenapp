@@ -111,8 +111,6 @@ function updateMovie($product) {
     
     $result = mysql_query($sqlQuery);
 	
-    
-    
 	if (!$result) {
 		die("error" . mysql_error());
         }
@@ -123,27 +121,21 @@ function updateMovie($product) {
 //update maker 
 
 function updateMaker($product) {
-    $makerID = (int) $product['mk_id'];
+    //die ("in update maker");
+    $makerID = (int) $product['mf_id'];
     $sqlQuery = "UPDATE mfs SET ";
-     $sqlQuery .= " mk_title = '". $product['mk_title'] . "'";
+    $sqlQuery .= " mf_title = '". $product['mf_title'] . "'";
    
-    $sqlQuery .= " WHERE mk_id = $makerID";
-    
-  //  echo $sqlQuery;
- //  die("...");
+    $sqlQuery .= " WHERE mf_id = $makerID";
     
     $result = mysql_query($sqlQuery);
-	
-    
-    
+	 
 	if (!$result) {
 		die("error" . mysql_error());
         }
-	
-    
 }
 
-
+// delete product 
 function deleteMovie($id) {
     $productID = (int) $id;
     $sqlQuery = "DELETE FROM products where product_id = $productID";
@@ -163,11 +155,7 @@ function retrieveMovie($id) {
 	$result = mysql_query($sqlQuery);
 	
 	if(!$result) die("error" . mysql_error());
-	
-	
 	//echo $sqlQuery;
-
-
 	return mysql_fetch_assoc($result);
 	
 }
@@ -184,8 +172,6 @@ function deleteMaker($id) {
 		die("error deleting maker" . mysql_error());
         }
 }
-
-
 
 function retrieveMaker($id) {
 
@@ -227,7 +213,7 @@ function output_edit_maker_link($id) {
 	
 }
 function output_delete_maker_link($id) {
-// typo
+//
 	return "<a href='deletemaker.php?id=$id'>Delete</a>";
 
 
