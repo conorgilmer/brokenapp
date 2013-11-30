@@ -24,4 +24,4 @@ define("COMPANY_NAME","Digital Hub");
 
 define("APPLICATION_NAME","WebElevate Confectionary Products");
 
-define("UPLOAD_PATH",  realpath(dirname(__FILE__)) . "\\..\\uploads\\");
+define("UPLOAD_PATH",  realpath(dirname(__FILE__)) . "/../../uploads/");

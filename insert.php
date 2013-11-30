@@ -41,16 +41,16 @@ if (!empty($_POST)) {
 	$product['taste'] = htmlspecialchars(strip_tags($_POST["taste"]));
 	$product['mf_id'] = (int) htmlspecialchars(strip_tags($_POST["mf_id"]));
         $product['country_id'] = (int) htmlspecialchars(strip_tags($_POST["country_id"]));
-       
-        
+        $product['filename']  = htmlspecialchars($_FILES['uploadedfile']['name']);
         $product['product_id'] = isset($_POST["product_id"]) ? (int) $_POST["product_id"] : 0;
-        
+        $product['maxfilesize'] = (int) htmlspecialchars(strip_tags($_POST["MAX_FILE_SIZE"]));
+             
 	$flashMessage = "";
 	if (validateProduct($product)) {
 		if ($product['product_id'] == 0) {
          //New! Save Movie returns the id of the record inserted         
 		$product_id = saveproduct($product);
-	//	uploadFiles($product_id);
+		uploadFiles($product_id);
 		
 		
 		$flashMessage = "Record has been saved";
@@ -59,12 +59,8 @@ if (!empty($_POST)) {
                     updateMovie($product);
 		
                         header("Location: listproducts.php");
-                }
-		
-		
+                }	
 	}
-	
-	
 	
 	}//end post
 	

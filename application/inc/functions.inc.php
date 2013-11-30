@@ -41,48 +41,54 @@ function saveProduct($product ) {
 	
 	$result = mysql_query($sqlQuery);
 	
-	
-
-	
 	if (!$result) {
 		echo $sqlQuery;
 		
 		die("error" . mysql_error());
 	} 
-	
-	
+		
 	return mysql_insert_id();
-	
 }
 /* 
  * Realistically, you would pass function $_FILES array, but here we are assuming it's available
  * UPLOAD_PATH is defined in config.inc.php
  */
 function uploadFiles($product_id) {
-	//echo UPLOAD_PATH;
-	//echo $_FILES['uploadedfile']['tmp_name'];
-	if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], UPLOAD_PATH)) {
+	// added to write fir
+        //echo "-files - " . $_FILES["uploadedfile"]["size"];
+        //echo " - maxfilesize - " . $_POST['MAX_FILE_SIZE'];  
+        //timestamp the filename for upload to avoid duplicates
+        $fnamearray = pathinfo($_FILES["uploadedfile"]["name"]);
+        $ts_filename = $fnamearray['filename'].'_'.time().'.'.$fnamearray['extension'];
+
+        $target = UPLOAD_PATH . basename( $ts_filename ) ; 
+        $ok=1; 
+
+        //if ($_FILES["uploadedfile"]["size"] < $_POST['MAX_FILE_SIZE']){
+	// $target = UPLOAD_PATH . basename($_FILES['uploadedfile']['tmp_name']); 
+	if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target)) {
 		
-		saveImageRecord($product_id, basename( $_FILES['uploadedfile']['name']));
+		saveImageRecord($product_id, basename( $ts_filename));
 		
 	
 	} else{
 		echo "<p>There was an error uploading the file, please try again!";
 	}
-	
-	
+        
+       // } else {
+        //echo "<b> Upload failed file greather than" . $product['maxfilesize'] ." .</b>";
+       // }	
 }
 
 
 function saveImageRecord($product_id, $imageName) {
 	
-	
-	$sqlQuery = "UPDATE products SET imagefile = '$imageName' where movie_id = $product_id"; 
+	echo "<br>image name " . $imageName;
+        //fix typo product id
+	$sqlQuery = "UPDATE products SET imagefile = '$imageName' where product_id = $product_id"; 
 	$result = mysql_query($sqlQuery);
 	
 	return $result;
-	
-	
 	
 }
 

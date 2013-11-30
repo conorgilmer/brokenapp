@@ -6,7 +6,7 @@
 */
 defined('MY_APP') or die('Restricted access');
 
-//die('boom');
+//remove die('boom');
 $link_id=@mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 //$link_id=@mysql_connect(DB_HOST,DB_USER,DB_PASSWORD); //spelling
 /*if($link_id) {
@@ -26,7 +26,6 @@ if(mysql_select_db("movietutorial",$link_id)) {
 	//echo "<p>Connection to database failed  </p>";
 }*/
 
-
 if ($link_id) {
     echo("Successful Connect to db server");
     //put inside if
@@ -34,10 +33,10 @@ if ($link_id) {
 
         echo("DB Selected");
     } else {
-        echo("<b>couldn't select db</b>");
+        echo("<b>Couldn't select db</b>");
     }
     
 } else {
     
-    echo ("<b>couldn't connect to db</b>");
+    echo ("<b>Couldn't connect to db</b>");
 }
