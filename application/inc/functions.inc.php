@@ -173,6 +173,7 @@ function deleteMaker($id) {
         }
 }
 
+// return the manufacturer details
 function retrieveMaker($id) {
 
 	$sqlQuery = "SELECT * from mfs WHERE mf_id = $id";
@@ -181,16 +182,12 @@ function retrieveMaker($id) {
 	
 	if(!$result) die("error" . mysql_error());
 	
-	
 	//echo $sqlQuery;
-
-
 	return mysql_fetch_assoc($result);
 	
 }
 
-//Makers
-
+//fix typos
 
 function output_edit_link($id) {
 	
@@ -216,7 +213,6 @@ function output_delete_maker_link($id) {
 //
 	return "<a href='deletemaker.php?id=$id'>Delete</a>";
 
-
 }
 
 
@@ -227,8 +223,7 @@ function output_selected($currentValue, $valueToMatch) {
 		
 		return "selected ='selected'";
 		
-	}
-	
+	}	
 }
 
 function authenticate($username, $password) {   

@@ -86,14 +86,14 @@ echo uihelperSelect('country_id',$arrayItems1,$product['country_id']) ?>
 
 
 
-
+<!-- options list moved arrow closing 28/11/13 -->
 	<div class="control-group">
 		<label class="control-label" for="inputproductTitle">Taste</label>
 		<div class="controls">
 			<select id="taste" name="taste">
-				<option value="Sweet"<?php echo output_selected($product['taste'],'Sweet') ?>>Sweet</option>
-				<option value="Savoury"<?php echo output_selected($product['taste'],'Savoury') ?>>Savoury</option>
-				<option value="Sour"<?php echo output_selected($product['taste'],'Sour') ?>>Sour</option>
+                            <option value="Sweet"><?php echo output_selected($product['taste'],'Sweet') ?>Sweet</option>
+                            <option value="Savoury"><?php echo output_selected($product['taste'],'Savoury') ?>Savoury</option>
+                                <option value="Sour"><?php echo output_selected($product['taste'],'Sour') ?>Sour</option>
 			
 
 			</select>
