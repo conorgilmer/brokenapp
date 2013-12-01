@@ -51,6 +51,7 @@ if ($result) {
 	$htmlString .= "<th>Confectionary Item</th>";
 	$htmlString .= "<th>Price</th>";
 	$htmlString .= "<th>Taste</th>";
+        $htmlString .= "<th>File</th>";
 	$htmlString .= "<th>Country</th>";
 	$htmlString .= "<th colspan='2'>Actions</th>";
 
@@ -70,6 +71,9 @@ if ($result) {
 		$htmlString .=  "</td>";
 		$htmlString .=  "<td>";
 		$htmlString .=  $product["taste"];
+		$htmlString .=  "</td>";
+		$htmlString .=  "<td>";
+		$htmlString .=  $product["imagefile"];
 		$htmlString .=  "</td>";
 		$htmlString .=  "<td>";
 		$htmlString .=  $product["country_id"];
