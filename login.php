@@ -30,6 +30,8 @@ function login($username, $password) {
     return authenticate($username,$password);
 }
 
+$flashMessage ="";
+
 if (!empty($_POST)) {
     
     $s_username = htmlspecialchars($_POST['username']);
@@ -40,12 +42,26 @@ if (!empty($_POST)) {
       //  die("logged in");
         header("Location: admin.php");
     }
+
+    else {
+        $flashMessage = "Login Details incorrect";
+    }
     
     
 }
 
 include (TEMPLATE_PATH . "/public/header.html");
 ?>
+<?php if (isset($flashMessage) && strlen(trim($flashMessage)) > 0 ) : ?>
+<div class="alert">
+	<button type="button" class="close" data-dismiss="alert"></button>
+	<strong>Message</strong>
+	<?php echo $flashMessage ?>
+</div>
+
+<?php endif;  ?>
+
+
 <div class="container">
     <form class="form-horizontal" action="" method="POST">
     
