@@ -60,7 +60,7 @@ function uploadFiles($product_id) {
         //timestamp the filename for upload to avoid duplicates
         $fnamearray = pathinfo($_FILES["uploadedfile"]["name"]);
         $ts_filename = $fnamearray['filename'].'_'.time().'.'.$fnamearray['extension'];
-
+        
         $target = UPLOAD_PATH . basename( $ts_filename ) ; 
         $ok=1; 
 
@@ -78,6 +78,7 @@ function uploadFiles($product_id) {
        // } else {
         //echo "<b> Upload failed file greather than" . $product['maxfilesize'] ." .</b>";
        // }	
+        
 }
 
 
@@ -108,6 +109,7 @@ function updateMovie($product) {
      $sqlQuery .= " title = '". $product['title'] . "',";
      $sqlQuery .= " description = '". $product['description'] . "', ";
      $sqlQuery .= " mf_id = '". $product['mf_id'] . "', ";
+   //  $sqlQuery .= " imagefile = '". $product['imagefile'] . "', ";
      $sqlQuery .= " country_id = '". $product['country_id'] . "'";
    
     $sqlQuery .= " WHERE product_id = $productID";

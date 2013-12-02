@@ -55,10 +55,13 @@ if (!empty($_POST)) {
 		
 		$flashMessage = "Record has been saved";
                 } else {
-                    
                     updateMovie($product);
-		
-                        header("Location: listproducts.php");
+                    uploadFiles($product['product_id']);
+	         
+                //    updateMovie($product);
+        	$flashMessage = "Record has been updated";
+                	
+               //     header("Location: listproducts.php");
                 }	
 	}
 	

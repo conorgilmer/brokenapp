@@ -35,11 +35,8 @@ if (!empty($_GET) && isset($_GET['id'])) {
 	$product = retrieveMovie($movieID);
 	
 	$buttonLabel = "Update Product";
-	
-	
 	}//end post
 	
-
 ?>
 <?php 
 $activeInsert = "active";

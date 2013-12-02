@@ -72,9 +72,10 @@ if ($result) {
 		$htmlString .=  "<td>";
 		$htmlString .=  $product["taste"];
 		$htmlString .=  "</td>";
-		$htmlString .=  "<td>";
-		$htmlString .=  $product["imagefile"];
-		$htmlString .=  "</td>";
+//		$htmlString .=  "<td><a target=\"_blank\" href=\"http://".UPLOAD_PATH;
+		$htmlString .=  "<td><a target=\"_blank\" href=\"uploads/";
+                $htmlString .=  $product["imagefile"];
+		$htmlString .=  "\">".$product["imagefile"]."</a></td>";
 		$htmlString .=  "<td>";
 		$htmlString .=  $product["country_id"];
 		$htmlString .=  "</td>";
