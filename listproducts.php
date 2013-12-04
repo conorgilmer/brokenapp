@@ -77,7 +77,7 @@ if ($result) {
                 $htmlString .=  $product["imagefile"];
 		$htmlString .=  "\">".$product["imagefile"]."</a></td>";
 		$htmlString .=  "<td>";
-		$htmlString .=  $product["country_id"];
+		$htmlString .=  getCountry($product["country_id"]);
 		$htmlString .=  "</td>";
 		
 		

@@ -14,6 +14,25 @@ function validateproduct($product) {
 	
 	
 }
+
+// save a manufacturer
+function getCountry($c_id ) {
+	
+	$sqlQuery = "SELECT country_name from country where country_id = " . $c_id;
+	
+	$result = mysql_query($sqlQuery);
+
+	if (!$result) {
+		echo $sqlQuery;
+		
+		die("error" . mysql_error());
+	} 
+	//comment in	
+        $ret = mysql_fetch_array($result);
+	return $ret['country_name'];
+	
+}
+
 // save a manufacturer
 function saveMaker($maker ) {
 	
