@@ -40,7 +40,9 @@ if (!empty($_POST)) {
         
         $_SESSION["loggedIn"]=1;
       //  die("logged in");
-        header("Location: admin.php");
+  //      header("Location: admin.php");
+      $flashMessage = "Welcome You are Logged in!";
+      header("Location: listproducts.php");    
     }
 
     else {
@@ -66,14 +68,14 @@ include (TEMPLATE_PATH . "/public/header.html");
     <form class="form-horizontal" action="" method="POST">
     
      <div class="control-group">
-    <label class="control-label"  for="username">Username:</label> 
+    <label class="control-label"  for="username">Username:-</label> 
       <div class="controls">
     <input type ="text" id="username" name="username" /> 
  	 </div>
     </div>
     
      <div class="control-group">
-       <label  class="control-label"   for="password">Password</label> 
+       <label  class="control-label"   for="password">Password:-</label> 
     <div class="controls">
     <input type="password" id="password" name="password" />
     </div>

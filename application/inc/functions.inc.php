@@ -216,6 +216,7 @@ function retrieveMaker($id) {
 
 //fix typos
 
+
 function output_edit_link($id) {
 	
 	return "<a href='edit.php?id=$id'>Edit</a>";
