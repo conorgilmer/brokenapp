@@ -35,6 +35,7 @@
 			<input type="text" id="inputPrice" name="price"
 				placeholder="Price"
 				value="<?php echo $product['price']; ?>">
+                        
 		</div>
 	</div>
 
@@ -91,9 +92,9 @@ echo uihelperSelect('country_id',$arrayItems1,$product['country_id']) ?>
 		<label class="control-label" for="inputproductTitle">Taste</label>
 		<div class="controls">
 			<select id="taste" name="taste">
-                            <option value="Sweet"><?php echo output_selected($product['taste'],'Sweet') ?>Sweet</option>
-                            <option value="Savoury"><?php echo output_selected($product['taste'],'Savoury') ?>Savoury</option>
-                                <option value="Sour"><?php echo output_selected($product['taste'],'Sour') ?>Sour</option>
+                            <option value="Sweet" <?php echo output_selected($product['taste'],'Sweet'); ?>>Sweet</option>
+                            <option value="Savoury"<?php echo output_selected($product['taste'],'Savoury'); ?>>Savoury</option>
+                                <option value="Sour"<?php echo output_selected($product['taste'],'Sour'); ?>>Sour</option>
 			
 
 			</select>
@@ -110,6 +111,16 @@ echo uihelperSelect('country_id',$arrayItems1,$product['country_id']) ?>
 
 			<input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
 <input name="uploadedfile" type="file" />
+
+<?php ; 
+if (isset($product['imagefile']))
+{$pth = "\"". "uploads/" .$product['imagefile']."\"";
+echo "<IMG STYLE=\"border: none;\" SRC=".$pth ." ALT=\"\">";
+}
+else{ //nada
+}
+?>
+
 		</div>
 	</div>
 

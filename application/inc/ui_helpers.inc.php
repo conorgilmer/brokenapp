@@ -14,7 +14,7 @@ function uihelperSelect($selectID, $arrayItems, $selectedItem = "") {
 		$htmlString .= "<option value='$optionID' $selected>$optionLabel</option>";
 	
 	}
-	
+
 	$htmlString .= "</select>";
 	
 	return $htmlString;

@@ -36,6 +36,18 @@ include (TEMPLATE_PATH . "/public/header.html");
 </ol>
 The sql setup is contained in the sqlsetup folder.
      
+
+    <h1>Fixing Notes</h1>
+    </p>
+
+<p>Fix the errors.
+<ol>
+<li>Much of the errors was fixing typos in the code</li>
+<li>It also involved adding an additional table for countries and processing for it</li>
+<li>Functionality was added to Add a Manufacturer and edit it to the database</li>
+<li>An Database dump should be available zipped up as fixeddb.sql</li>
+</ol></p>
+
         
     </div>
     

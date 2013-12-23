@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 18, 2013 at 01:06 PM
+-- Generation Time: Dec 23, 2013 at 12:00 AM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -86,7 +86,7 @@ INSERT INTO `mfs` (`mf_id`, `mf_title`) VALUES
 (12, 'Rowntree-Mac'),
 (11, 'Nestles'),
 (10, 'Storck'),
-(9, 'Freia'),
+(9, 'Freia Inc.'),
 (5, 'Cadburys'),
 (6, 'Rowntree'),
 (7, 'Jacobs'),
@@ -117,10 +117,10 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`product_id`, `mf_id`, `title`, `price`, `taste`, `description`, `imagefile`, `country_id`) VALUES
-(41, 9, 'Trokia', 1, 'Savoury', 'Never liked them funnily', '', 4),
+(41, 9, 'Trokia', 1, 'Sour', '  Never liked them funnily  \r\n  ', '', 4),
 (40, 9, 'Kwik Lunsj', 2, 'Sweet', 'Kit Kat Clone', '', 4),
 (34, 5, 'Caramel', 1, 'Sweet', ' Carmel covered in Chocolate   \r\n ', '', 1),
-(35, 6, 'Lemon Drops', 2, 'Sour', '', '', 2),
+(35, 6, 'Lemon Drops', 2, 'Savoury', '    \r\n  ', '', 2),
 (36, 7, 'Fig Rolls', 2, 'Sweet', '      Its a mystery  \r\n    \r\n    \r\n  ', 'figroll90_1386018091.png', 1),
 (46, 5, 'kinder', 12, 'Sweet', '  jkhkjhjkh    \r\n    \r\n  ', '', 1),
 (42, 10, 'Reisen', 2, 'Sweet', '  Never knew who made them  \r\n  ', '', 6),
